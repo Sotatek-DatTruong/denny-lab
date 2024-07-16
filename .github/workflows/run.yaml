@@ -16,10 +16,19 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+    # - name: Build, tag, deploy docker image
+    #   env:
+    #     IMAGE_NAME: telemedicine-be
+    #     IMAGE_TAG: dev
+    #   run: |
+    #     echo "${{ secrets.DENNY }}" > .env
+    #     cat .env
+
     - name: Build, tag, deploy docker image
       env:
         IMAGE_NAME: telemedicine-be
         IMAGE_TAG: dev
       run: |
-        echo "${{ secrets.DENNY }}" > .env
-        cat .env
+        echo "debug"
+        # gradle clean
+        # gradle build -x test
